@@ -1,0 +1,45 @@
+$dark = #002453
+$light = #beac8a
+$black = black
+$white = white
+
+$bold = 500
+$normal = 300
+
+$container = 1100px
+
+clearfix()
+  *zoom:1
+  &:before,
+  &:after
+    content:""
+    display:table
+  &:after
+    clear:both
+
+flexCenter()
+  display flex
+  justify-content center
+  flex-direction column
+
+headline()
+  clearfix()
+  height 624px
+  background-size cover
+  .cell
+    width 44%
+    height 100%
+    padding 0 30px
+    background rgba(0, 0, 0, 0.7)
+    text-align right
+    display flex
+    justify-content center
+    flex-direction column
+    h2
+      color $light
+      font-weight normal
+      font-size 33pt
+    h3
+      color $white
+      font-weight normal
+      font-size 16.5pt
