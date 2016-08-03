@@ -15,6 +15,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^2.1.2",
     "vue": "^1.0.21",
+    "vue-enter-key": "^1.0.2",
     "vue-i18n": "^4.1.0",
     "vue-router": "^0.7.13"
   },

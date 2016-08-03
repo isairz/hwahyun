@@ -15,15 +15,21 @@ Vue.use(VueRouter)
 const Main = Vue.extend({})
 const router = new VueRouter({ history: true })
 
+router.beforeEach(function (transition) {
+  window.scrollTo(0, 0)
+  transition.next()
+})
+
 router.map({
   '/': {
     component: App,
     subRoutes: {
       '/': { component: Home },
       '/intro': { component: Intro },
-      '/field': { component: Field },
+      '/field/:id': { component: Field },
       '/people': { component: PeopleList },
-      '/people/:id': { component: PeopleDetail },
+      '/people/:key': { component: PeopleList },
+      '/people/show/:id': { component: PeopleDetail },
     },
   },
 })

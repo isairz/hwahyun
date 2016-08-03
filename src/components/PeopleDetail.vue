@@ -1,5 +1,5 @@
 <template>
-  <div class='people-detai'>
+  <div class='people-detail'>
     <div class='headline'>
       <div class="cell">
         <h2>{{ $t('menu.people') }}</h2>
@@ -9,10 +9,10 @@
     <div class='container'>
       <div class='people'>
         <div class='photo'>
-          <img src='/'>
+          <img src='{{ `/static/photos/${people.photo}` }}'>
         </div>
         <div class='data'>
-          <div class='title'>{{ $t(people.title) }}</div>
+          <div class='title'>{{ $t(`menu.title${people.title}`) }}</div>
           <div class='name'>{{ people.name }}</div>
           <div class='email'><span class='caption'>{{ $t('menu.email') }}</span>{{ people.email }}</div>
           <div class='field'><span class='caption'>{{ $t('menu.field') }}</span>{{ people.field }}</div>
@@ -22,25 +22,30 @@
     <div class='bottom'>
       <div class='container'>
         <div class='detail'>
-          {{ people.detail }}
         </div>
-        <div class='back'>{{ $t('menu.list') }}</div>
+        <div class='education'>
+          <h3>{{ $t('menu.education') }}</h3>
+          {{{ people.education | enterKey "&lt;br&gt;" }}}
+        </div>
+        <div class='career'>
+          <h3>{{ $t('menu.career') }}</h3>
+          {{{ people.career | enterKey "&lt;br&gt;" }}}
+        </div>
+        <a v-link="'/people'"><div class='back'>{{ $t('menu.list') }}</div></a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+var Vue = require('vue')
+var VueEnterKey = require('vue-enter-key')
+
+Vue.use(VueEnterKey)
 export default {
   data () {
     return {
-      people: {
-        'title': 'menu.people2',
-        'name': '이봉구(이봉구)',
-        'email': 'a@a.com',
-        'field': 'ㄱ,ㄴ,ㄷ,ㄹ,ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ',
-        'detail': 'asdfasdfasdfadsf asdf asdf adsf',
-      },
+      people: require('./people.json').filter(people => Number(people.id) === Number(this.$route.params.id))[0]
     }
   }
 }
@@ -70,8 +75,7 @@ export default {
     float right
     img
       width 100%
-      /*height: auto*/
-      height 624px
+      height: auto
       display block
   .data
     float: left
@@ -94,6 +98,10 @@ export default {
 .bottom
   background rgba(190, 172, 138, 0.5)
   padding-bottom 100px
+  font-size 12pt
+  h3
+    margin-top 40px
+    margin-bottom 20px
 .detail
   padding-top 50px
   padding-bottom 20px

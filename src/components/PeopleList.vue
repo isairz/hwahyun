@@ -9,57 +9,45 @@
     <div class='container'>
       <div class='menu'>
         <ul>
-          <li>{{ $t('menu.people1') }}</li>
-          <li>{{ $t('menu.people2') }}</li>
-          <li>{{ $t('menu.people3') }}</li>
-          <li>{{ $t('menu.people4') }}</li>
-          <li>{{ $t('menu.people5') }}</li>
+          <a v-link="{ path: '/people', exact: true }"><li>{{ $t('menu.all') }}</li></a>
+          <a v-link="'/people/1'"><li>{{ $t('menu.title1') }}</li></a>
+          <a v-link="'/people/2'"><li>{{ $t('menu.title2') }}</li></a>
+          <a v-link="'/people/3'"><li>{{ $t('menu.title3') }}</li></a>
+          <a v-link="'/people/4'"><li>{{ $t('menu.title4') }}</li></a>
         </ul>
       </div>
-
       <div class='peoples'>
-        <div v-for='people in peoples'>
-          <div class='people'>
-            <div class='photo'>
-              <img src='/'>
-            </div>
-            <div class='data'>
-              <div class='title'>{{ $t(people.title) }}</div>
-              <div class='name'>{{ people.name }}</div>
-              <div class='email'><span class='caption'>{{ $t('menu.email') }}</span>{{ people.email }}</div>
-              <div class='field'><span class='caption'>{{ $t('menu.field') }}</span>{{ people.field }}</div>
+        <a v-for="people in peoples | titleBy $route.params.key" v-link="`/people/show/${people.id}`">
+            <div class='people'>
+              <div class='photo'>
+                <div class='photoCrop'>
+                  <img src='{{ `/static/photos/${people.photo}` }}'>
+                </div>
+              </div>
+              <div class='data'>
+                <div class='title'>{{ $t(`menu.title${people.title}`) }}</div>
+                <div class='name'>{{ people.name }}</div>
+                <div class='email'><span class='caption'>{{ $t('menu.email') }}</span>{{ people.email }}</div>
+                <div class='field'><span class='caption'>{{ $t('menu.field') }}</span>{{ people.field }}</div>
+              </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+Vue.filter('titleBy', function (items, key) {
+  if (!key || key === '0') return items
+  return items.filter(item => Number(item.title) === Number(key))
+})
 export default {
   data () {
     return {
-      peoples: [
-        {
-          'title': 'menu.people2',
-          'name': '이봉구(이봉구)',
-          'email': 'a@a.com',
-          'field': 'ㄱ,ㄴ,ㄷ,ㄹ,ㅁ',
-        },
-        {
-          'title': 'menu.people2',
-          'name': '신경식',
-          'email': 'a@a.com',
-          'field': 'ㄱ,ㄴ,ㄷ,ㄹ,ㅁ',
-        },
-        {
-          'title': 'menu.people2',
-          'name': '김태용',
-          'email': 'a@a.com',
-          'field': 'ㄱ,ㄴ,ㄷ,ㄹ,ㅁ',
-        },
-      ],
+      peoples: require('./people.json')
     }
   }
 }
@@ -82,6 +70,10 @@ export default {
     max-width $container
     list-style-type none
     margin 56px auto 53px
+    .v-link-active
+      li
+        background $dark
+        color $light
     li
       width 19.8%
       height 58px
@@ -96,19 +88,29 @@ export default {
         color $light
         background $dark
 .peoples
+  clearfix()
   border-top 2px solid $light
-  border-bottom 2px solid $light
+  border-bottom 1px solid $light
+  margin-bottom 100px
 .people
   clearfix()
   color $dark
   width 100%
+  border-bottom 1px solid $light
   .photo
     display block
     float left
-    padding 20px 0
-    img
+    margin 20px 0
+    padding 0 20px 0 0
+    border-right 1px solid $light
+    overflow: hidden
+    .photoCrop
       width 270px
       height 197px
+      overflow hidden
+      img
+        width 100%
+        height auto
   .data
     float: left
     padding 48px 28px
@@ -121,7 +123,7 @@ export default {
     margin-bottom -7px
   .name
     font-size 24pt
-    font-weight bold
+    font-weight $bold
     margin-bottom 20px
   .email
     font-size 12pt

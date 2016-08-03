@@ -20,7 +20,7 @@
     </div>
     <div class='vision'>
       <div class='wrap'>
-        <div class='title'>{{ $t('menu.vision') }}</div>
+        <div class='title3'>{{ $t('menu.vision') }}</div>
         <ul>
           <li>
             <img src='../assets/intro_icon1.svg'>
@@ -39,7 +39,7 @@
     </div>
     <div class='strength'>
       <div class='wrap'>
-        <div class='title-dark'>{{ $t('menu.strength') }}</div>
+        <div class='title4'>{{ $t('menu.strength') }}</div>
         <ul>
           <li>
             <img src='../assets/intro_icon4.svg'>
@@ -96,23 +96,20 @@ export default {
 
 <style lang="stylus" scoped>
 @import "../variables.styl"
-.title
+.title3
   font-size 22.5pt
-  border 1px solid $light
-  border-radius 28px
   color $light
-  background-color $dark
-  width 300px
+  width 356px
   height 56px
   line-height 56px
-  margin 59px auto 45px
+  margin 59px auto 47px
   text-align center
+  background url('../assets/title_frame_3.svg')
 
-.title-dark
-  @extend .title
+.title4
+  @extend .title3
   color $dark
-  border-color $dark
-  background-color $light
+  background url('../assets/title_frame_4.svg')
 
 .headline
   headline()
@@ -133,16 +130,16 @@ export default {
     clearfix()
   h1
     font-size 36px
-    font-weight bold
+    font-weight $bold
     text-align center
   h2
     font-size 18pt
-    font-weight normal
+    font-weight $normal
     text-align center
     margin-bottom 40px
   h4
     font-size 12pt
-    font-weight normal
+    font-weight $normal
     color $white
     width 50%
     float left
@@ -176,7 +173,7 @@ export default {
       border-left 1px solid $dark
       margin-top 52px
       font-size 15pt
-      font-weight bold
+      font-weight $bold
 
 .strength
   clearfix()
@@ -230,8 +227,8 @@ export default {
     padding 40px
     h2
       font-size 24pt
-      font-weight bold
+      font-weight $bold
     h3
       font-size 18pt
-      font-weight normal
+      font-weight $normal
 </style>
