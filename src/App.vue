@@ -83,6 +83,8 @@ a, a:hover, a:visited
     float: left
     margin-left 40px
     word-spacing -0.1em
+  a:first-child li
+    list-style none
 .footer
   clearfix()
   background: $dark

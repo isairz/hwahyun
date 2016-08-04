@@ -57,6 +57,7 @@ export default {
 .headline
   headline()
   background url('../assets/people_image1.jpg') no-repeat center center
+  background-size cover
 
 .gray
   background $light

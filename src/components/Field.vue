@@ -17,7 +17,7 @@
         <span>{{ $t(`menu.field${$route.params.id}`) }}</span>
       </div>
       <div class='content'>
-        <span>{{ $t(`menu.field${$route.params.id}`) }} 설명</span>
+        <span>{{{ $t(`desc.field${$route.params.id}`) }}}</span>
       </div>
     </div>
   </div>
@@ -38,6 +38,7 @@ export default {
 .headline
   headline()
   background url('../assets/field_image1.jpg') no-repeat center center
+  background-size cover
 
 .container
   max-width $container

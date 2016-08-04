@@ -114,6 +114,7 @@ export default {
 .headline
   headline()
   background url('../assets/intro_image1.jpg') no-repeat center center
+  background-size cover
 
 .foundation
   clearfix()

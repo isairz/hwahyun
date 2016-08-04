@@ -26,6 +26,15 @@
       </ul>
     </div>
     <div class='building'></div>
+    <div class='news'>
+      <div class='title2'>{{ $t('menu.news') }}</div>
+      <ul>
+        <li v-for="n in 4">
+          <div class='black'>
+          </div>
+        </li>
+      </ul>
+    </div>
     <a target='_blank' href="http://map.naver.com/?menu=location&mapMode=0&lat=37.5002951&lng=127.0117457&dlevel=12&type=SITE_1&tab=1&__fromRestorer=true&query=67KV66y067KV7J24IO2ZlO2YhA%3D%3D&searchCoord=&mpx=37.5876733%2C126.9447369%3AZ11%3A0.0287341%2C0.0135111&enc=b64">
       <div class='map'></div>
     </a>
@@ -63,6 +72,16 @@ export default {
   margin 59px auto 47px
   text-align center
   background url('../assets/title_frame_1.svg')
+
+.title2
+  font-size 22.5pt
+  color $dark
+  width 356px
+  height 56px
+  line-height 56px
+  margin 59px auto 47px
+  text-align center
+  background url('../assets/title_frame_2.svg')
 
 .overview
   clearfix()
@@ -152,6 +171,9 @@ export default {
   clearfix()
   background $dark
 
+.news
+  clearfix()
+  background $light
 
 .building
   clearfix()
