@@ -12,8 +12,8 @@
           <h1>{{ $t('menu.siteCN') }}</h1>
           <h2>{{{ $t('desc.intro2') }}}</h2>
           <div class="cell">
-            <h4>{{ $t('desc.intro3') }}</h4>
-            <h4>{{ $t('desc.intro4') }}</h4>
+            <p>{{ $t('desc.intro3') }}</p>
+            <p>{{ $t('desc.intro4') }}</p>
           </div>
         </div>
       </div>
@@ -104,12 +104,14 @@ export default {
   line-height 56px
   margin 59px auto 47px
   text-align center
-  background url('../assets/title_frame_3.svg')
+  background $dark
+  border-radius 36px
 
 .title4
   @extend .title3
   color $dark
-  background url('../assets/title_frame_4.svg')
+  background $light
+  border-radius 36px
 
 .headline
   headline()
@@ -119,6 +121,7 @@ export default {
 .foundation
   clearfix()
   background url('../assets/intro_image2.jpg') no-repeat center center
+  background-size cover
   color $light
   border-top 1px solid $light
   .darkcell
@@ -130,7 +133,7 @@ export default {
   .cell
     clearfix()
   h1
-    font-size 36px
+    font-size 36pt
     font-weight $bold
     text-align center
   h2
@@ -138,7 +141,7 @@ export default {
     font-weight $normal
     text-align center
     margin-bottom 40px
-  h4
+  p
     font-size 12pt
     font-weight $normal
     color $white
@@ -179,6 +182,7 @@ export default {
 .strength
   clearfix()
   background url('../assets/intro_image3.jpg') no-repeat center center
+  background-size cover
   .wrap
     clearfix()
     max-width $container
@@ -226,6 +230,7 @@ export default {
     width 45%
     float right
     padding 40px
+    padding-top 150px
     h2
       font-size 24pt
       font-weight $bold

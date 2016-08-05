@@ -53,38 +53,57 @@ body
   font-family 'Noto Sans KR', sans-serif
   background $white
   font-size 12pt
+  font-weight $normal
   letter-spacing -0.05em
 
 a, a:hover, a:visited
   color inherit
   text-decoration inherit
+
+
+
+div.footer p span
+  padding-right 10px
+  &:before
+    content "|"
+    padding-right 10px
 </style>
 
 <style lang="stylus" scoped>
 @import "./variables.styl"
 .wrap
   clearfix()
-  height 90px
+  height 78px
   max-width $container
   margin auto
 .logo
   margin-left 84px
   float: left
   margin-top 20px
+  img
+    width 228px
+    height 36px
 .menu
   margin-top 25px
   float: right
   ul
     float: left
+    list-style: none;
+    font-size: 20px
   li
     color $dark
-    font-size 16.5pt
+    font-size 15pt
     font-weight $bold
     float: left
-    margin-left 40px
-    word-spacing -0.1em
-  a:first-child li
-    list-style none
+    word-spacing -0.2em
+    &:before
+      content:"·";
+      font-size:50px;
+      vertical-align:top
+      line-height:20pt
+      padding 0 15px
+  a:first-child li:before
+    content:""
 .footer
   clearfix()
   background: $dark
@@ -104,7 +123,7 @@ a, a:hover, a:visited
     top 0
     width 108px
     height 32px
-    line-height 32px
+    line-height 31px
     border 1px solid $light
     color $light
     text-align center

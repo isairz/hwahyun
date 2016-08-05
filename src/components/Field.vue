@@ -9,15 +9,15 @@
     <div class='container'>
       <div class='menu'>
         <ul>
-          <a v-for="id in 10" v-link='`/field/${id+1}`'><li>{{ $t(`menu.field${id+1}`) }}</li></a>
+          <a v-for="id in 10" v-link='"/field/" + (id+1)'><li>{{ $t('menu.field' + (id+1)) }}</li></a>
         </ul>
       </div>
       <div class='title'>
-        <img src="{{ $t(`/static/assets/field_icon${$route.params.id}.svg`) }}">
-        <span>{{ $t(`menu.field${$route.params.id}`) }}</span>
+        <img src='{{ $t("/static/assets/field_icon" + $route.params.id + ".svg") }}'>
+        <span>{{ $t("menu.field" + $route.params.id) }}</span>
       </div>
       <div class='content'>
-        <span>{{{ $t(`desc.field${$route.params.id}`) }}}</span>
+        <span>{{{ $t("desc.field" + $route.params.id) }}}</span>
       </div>
     </div>
   </div>
@@ -70,13 +70,14 @@ export default {
 
 .title
   clearfix()
-  border-bottom 1px solid $dark
+  border-bottom 2px solid $dark
   img
     width 97px
     height 97px
     display block
     float left
   span
+    color $dark
     height 97px
     line-height 97px
     font-size 24pt

@@ -66,22 +66,26 @@ export default {
 .title1
   font-size 22.5pt
   color $light
+  border 1px solid $light
+  border-radius 36px
   width 356px
   height 56px
   line-height 56px
   margin 59px auto 47px
   text-align center
-  background url('../assets/title_frame_1.svg')
+  /*background url('../assets/title_frame_1.svg')*/
 
 .title2
   font-size 22.5pt
   color $dark
+  border 1px solid $dark
+  border-radius 36px
   width 356px
   height 56px
   line-height 56px
   margin 59px auto 47px
   text-align center
-  background url('../assets/title_frame_2.svg')
+  /*background url('../assets/title_frame_2.svg')*/
 
 .overview
   clearfix()
@@ -95,17 +99,17 @@ export default {
     height 100%
     background rgba(0, 0, 0, 0.7)
     text-align right
-    padding-right 12px
+    padding-right 30px
     h1
       font-weight $bold
-      font-size 27pt
+      font-size 24pt
       padding-bottom 20px
     h2
       font-weight $normal
-      font-size 27pt
+      font-size 24pt
     h3
       font-weight $normal
-      font-size 15pt
+      font-size 13.5pt
 
 .business-field
   clearfix()
@@ -162,6 +166,7 @@ export default {
     h2
       font-weight $bold
       font-size 21pt
+      margin-top 10px
     h3
       font-weight 300
       font-size 21pt
@@ -208,8 +213,8 @@ export default {
     border-right 1px solid $light
     padding-left 30px
     padding-right 30px
-    margin-top 111px
-    margin-bottom 156px
+    margin-top 130px
+    margin-bottom 130px
   .cell2
     @extend .detail .cell1
     text-align left

@@ -13,10 +13,13 @@ Vue.config.lang = 'ko'
 
 Vue.use(VueRouter)
 const Main = Vue.extend({})
-const router = new VueRouter({ history: true })
+const router = new VueRouter({
+  history: true,
+  saveScrollPosition: true,
+})
 
 router.beforeEach(function (transition) {
-  window.scrollTo(0, 0)
+  if (transition.to.path.indexOf('/people/show') !== -1) window.scrollTo(0, 650)
   transition.next()
 })
 

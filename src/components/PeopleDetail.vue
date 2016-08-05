@@ -9,10 +9,10 @@
     <div class='container'>
       <div class='people'>
         <div class='photo'>
-          <img src='{{ `/static/photos/${people.photo}` }}'>
+          <img src='{{ "/static/photos/" + people.photo }}'>
         </div>
         <div class='data'>
-          <div class='title'>{{ $t(`menu.title${people.title}`) }}</div>
+          <div class='title'>{{ $t("menu.title" + people.title) }}</div>
           <div class='name'>{{ people.name }}</div>
           <div class='email'><span class='caption'>{{ $t('menu.email') }}</span>{{ people.email }}</div>
           <div class='field'><span class='caption'>{{ $t('menu.field') }}</span>{{ people.field }}</div>
@@ -104,8 +104,8 @@ export default {
     margin-top 40px
     margin-bottom 20px
 .detail
-  padding-top 50px
-  padding-bottom 20px
+  padding-top 20px
+  padding-bottom 10px
   font-size 12pt
   color $black
 .back

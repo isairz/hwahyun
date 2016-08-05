@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import ko from './ko'
+import en from './en'
 
 const locales = {
-  ko: ko,
+  ko,
+  en,
 }
 
 Vue.use(VueI18n)

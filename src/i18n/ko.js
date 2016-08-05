@@ -20,7 +20,7 @@ export default {
     field9: '노무',
     field10: '일반회사자문',
     is: '은',
-    vision: '비젼',
+    vision: '비전',
     strength: '강점',
     all: '전체',
     title1: '대표변호사',
@@ -31,7 +31,7 @@ export default {
     education: '학력',
     career: '경력',
     list: '목록',
-    disclaimer: '면책조항',
+    disclaimer: '면책공고',
   },
   desc: {
     overview1: '최고의 실력과<br>정성으로 고객에게 헌신하는',
@@ -40,8 +40,8 @@ export default {
     tel: '02. 535. 1766',
     fax: '02. 535. 0260',
     email: 'jpartners@jpartners.co.kr',
-    footinfo: '|우| 06593 서울특별시 서초구 서초중앙로 209 해성빌딩 법무법인 화현 | 대표자 홍길동<br>| 전화번호 02.535.1766 | 팩스 02.535.0260 | e-mail jpartners@jpartners.co.kr',
-    copyright: 'COPYRIGHT 2016 JUNG & SOHN ALL RIGHTS RESERVED',
+    footinfo: '<span>우| 06593 서울특별시 서초구 서초중앙로 209 해성빌딩 법무법인 화현</span><span>대표자 홍길동</span><br><span>전화번호 02.535.1766</span><span>팩스 02.535.0260</span><span>e-mail jpartners@jpartners.co.kr',
+    copyright: 'COPYRIGHT © 2016 JUNG & SOHN ALL RIGHTS RESERVED',
 
     intro1: '의뢰인에게 보다 본질적인<br>만족을 줄 수 있는 법률서비스를<br>제공합니다',
     intro2: '기업이 직면하게 되는 법률상의 제반문제를 신속, 정확하게 해결하고,<br>다양한 법률수요에 상응하는 적절한 서비스를 제공하기 위하여<br>2001년 9월 설립되었습니다.',
