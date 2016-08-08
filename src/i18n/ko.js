@@ -42,6 +42,7 @@ export default {
     email: 'jpartners@jpartners.co.kr',
     footinfo: '<span>우| 06593 서울특별시 서초구 서초중앙로 209 해성빌딩 법무법인 화현</span><span>대표자 홍길동</span><br><span>전화번호 02.535.1766</span><span>팩스 02.535.0260</span><span>e-mail jpartners@jpartners.co.kr',
     copyright: 'COPYRIGHT © 2016 JUNG & SOHN ALL RIGHTS RESERVED',
+    disclaimer: '본 웹사이트는 일반적인 정보를 제공할 목적으로 제작된 것으로 법률적인 자문이나 홍보를 위한 것은 아닙니다.<br><br>본 웹사이트에서 취득한 정보로 인해 문제가 발생하여 직 간접적으로 손해를 입었다 하더라도 법무법인 화현은 어떠한 법적인 책임도 지지아니하며, 이 웹사이트에서 제공하는 정보에 기반하여 조치를 취하시기에 앞서 반드시 저희 사무실에 법률적 자문을 구하시기 바랍니다.',
 
     intro1: '의뢰인에게 보다 본질적인<br>만족을 줄 수 있는 법률서비스를<br>제공합니다',
     intro2: '기업이 직면하게 되는 법률상의 제반문제를 신속, 정확하게 해결하고,<br>다양한 법률수요에 상응하는 적절한 서비스를 제공하기 위하여<br>2001년 9월 설립되었습니다.',

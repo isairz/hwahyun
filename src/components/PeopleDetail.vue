@@ -14,8 +14,8 @@
         <div class='data'>
           <div class='title'>{{ $t("menu.title" + people.title) }}</div>
           <div class='name'>{{ people.name }}</div>
-          <div class='email'><span class='caption'>{{ $t('menu.email') }}</span>{{ people.email }}</div>
-          <div class='field'><span class='caption'>{{ $t('menu.field') }}</span>{{ people.field }}</div>
+          <div class='email'><span class='caption'>{{ $t('menu.email') }}</span><p>{{ people.email }}</p></div>
+          <div class='field'><span class='caption'>{{ $t('menu.field') }}</span><p>{{ people.field }}</p></div>
         </div>
       </div>
     </div>
@@ -82,20 +82,25 @@ export default {
     float: left
     padding 150px 28px 50px
     width: 50%
-  .caption
-    color $light
-    width 5em
-    display inline-block
   .title
     font-size 18pt
     margin-bottom -7px
   .name
     font-size 36pt
     margin-bottom 20px
+  .caption
+    color $light
+    width 5em
+    position absolute
   .email
     font-size 18pt
+    p
+      padding-left 100px
   .field
     font-size 18pt
+    p
+      padding-left 100px
+      word-break keep-all
 .bottom
   background rgba(190, 172, 138, 0.5)
   padding-bottom 100px

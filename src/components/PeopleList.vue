@@ -17,15 +17,15 @@
         </ul>
       </div>
       <div class='peoples'>
-        <a v-for="people in peoples | titleBy $route.params.key" v-link="`/people/show/${people.id}`">
+        <a v-for="people in peoples | titleBy $route.params.key" v-link="'/people/show/' + people.id">
             <div class='people'>
               <div class='photo'>
                 <div class='photoCrop'>
-                  <img src='{{ `/static/photos/${people.photo}` }}'>
+                  <img src="{{ '/static/photos/' + people.photo }}">
                 </div>
               </div>
               <div class='data'>
-                <div class='title'>{{ $t(`menu.title${people.title}`) }}</div>
+                <div class='title'>{{ $t("menu.title" + people.title) }}</div>
                 <div class='name'>{{ people.name }}</div>
                 <div class='email'><span class='caption'>{{ $t('menu.email') }}</span>{{ people.email }}</div>
                 <div class='field'><span class='caption'>{{ $t('menu.field') }}</span>{{ people.field }}</div>

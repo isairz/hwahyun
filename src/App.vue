@@ -26,7 +26,22 @@
         <p>&nbsp;</p>
         <p>{{{ $t('desc.copyright') }}}</p>
       </div>
-      <div class='disclaimer'>{{ $t('menu.disclaimer') }}</div>
+      <div v-on:click="showPopup" class='disclaimer'>{{ $t('menu.disclaimer') }}</div>
+
+      <div class="sidebar">
+        <a href="javascript:scrollTo(0,0)" title="TOP">
+          <div class="goTop"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div v-if='popup' class='popup'>
+    <div class='windowline'>
+      <img class='close' src='./assets/popup_x.svg' v-on:click="showPopup" >
+    </div>
+    <div class='popupbody'>
+      {{{ $t('desc.disclaimer') }}}
+      <img src='./assets/logo_light.svg'>
     </div>
   </div>
 </template>
@@ -35,6 +50,16 @@
 import LanguageChooser from './components/LanguageChooser'
 export default {
   components: { LanguageChooser },
+  data () {
+    return {
+      popup: false,
+    }
+  },
+  methods: {
+    showPopup: function (event) {
+      this.popup = !this.popup
+    }
+  }
 }
 </script>
 
@@ -137,4 +162,38 @@ div.footer p span
     position: relative
     .wrap2
       padding-left 250px
+.sidebar
+  margin-left 100%
+  .goTop
+    position fixed
+    bottom 25px
+    right 25px
+    width 58px
+    height 58px
+    background-image: url('./assets/top1.svg')
+    &:hover
+      background-image: url('./assets/top2.svg')
+.popup
+  position fixed
+  top: 40%
+  right 30%
+  max-width: 329px
+  z-index 5
+  .close
+    position absolute
+    right 0px
+    top 0px
+  .windowline
+    width 100%
+    height 28px
+    background $light
+  .popupbody
+    padding 30px
+    font-size 10.5pt
+    background $white
+    img
+      width 123px
+      height 19px
+      margin-top 20px
+      display block
 </style>

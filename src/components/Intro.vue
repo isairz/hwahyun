@@ -9,7 +9,7 @@
     <div class='foundation'>
       <div class='darkcell'>
         <div class='wrap'>
-          <h1>{{ $t('menu.siteCN') }}</h1>
+          <h1>{{ $t('menu.siteCN') }}<span>{{ $t('menu.is') }}</span></h1>
           <h2>{{{ $t('desc.intro2') }}}</h2>
           <div class="cell">
             <p>{{ $t('desc.intro3') }}</p>
@@ -136,6 +136,9 @@ export default {
     font-size 36pt
     font-weight $bold
     text-align center
+    span
+      font-size 18pt
+      font-weight $normal
   h2
     font-size 18pt
     font-weight $normal
